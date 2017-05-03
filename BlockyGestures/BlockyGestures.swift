@@ -11,6 +11,8 @@ import Foundation
 import UIKit
 import UIKit.UIGestureRecognizerSubclass
 
+typealias Store = GestureRecognizerClosureStore
+
 public protocol Blocky: class {
     func performing(_ action: @escaping () -> Void) -> Self
     
@@ -19,22 +21,9 @@ public protocol Blocky: class {
     func performing(when states: [UIGestureRecognizerState], _ action: @escaping () -> Void) -> Self
 }
 
-var AssociatedObjectHandle: UInt8 = 0
-extension Blocky {
-    public typealias BlockStore = ClosureStore<UIGestureRecognizerState>
-    public var actions: BlockStore {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedObjectHandle) as? BlockStore ?? BlockStore()
-        }
-        set {
-            return objc_setAssociatedObject(self, &AssociatedObjectHandle, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
-}
-
 extension UIGestureRecognizer: Blocky {
     public func performing(_ action: @escaping () -> Void) -> Self {
-        return performing(when: .began, action)
+        return performing(when: .possible, action)
     }
 
     public func performing(when state: UIGestureRecognizerState, _ action: @escaping () -> Void) -> Self {
@@ -43,7 +32,7 @@ extension UIGestureRecognizer: Blocky {
 
     public func performing(when states: [UIGestureRecognizerState], _ action: @escaping () -> Void) -> Self {
         for state in states {
-            actions.set(state, action)
+            Store.set(gesture: self, state: state, action)
         }
         return self
     }
@@ -52,7 +41,7 @@ extension UIGestureRecognizer: Blocky {
 extension UITapGestureRecognizer {
     override open var state: UIGestureRecognizerState {
         didSet {
-            if let action = actions.get(state) {
+            if let action = Store.get(self, state: state) {
                 action()
             }
         }
@@ -62,7 +51,7 @@ extension UITapGestureRecognizer {
 extension UIPinchGestureRecognizer {
     override open var state: UIGestureRecognizerState {
         didSet {
-            if let action = actions.get(state) {
+            if let action = Store.get(self, state: state) {
                 action()
             }
         }
@@ -72,7 +61,7 @@ extension UIPinchGestureRecognizer {
 extension UIRotationGestureRecognizer {
     override open var state: UIGestureRecognizerState {
         didSet {
-            if let action = actions.get(state) {
+            if let action = Store.get(self, state: state) {
                 action()
             }
         }
@@ -82,7 +71,7 @@ extension UIRotationGestureRecognizer {
 extension UISwipeGestureRecognizer {
     override open var state: UIGestureRecognizerState {
         didSet {
-            if let action = actions.get(state) {
+            if let action = Store.get(self, state: state) {
                 action()
             }
         }
@@ -92,7 +81,7 @@ extension UISwipeGestureRecognizer {
 extension UIPanGestureRecognizer {
     override open var state: UIGestureRecognizerState {
         didSet {
-            if let action = actions.get(state) {
+            if let action = Store.get(self, state: state) {
                 action()
             }
         }
@@ -102,7 +91,7 @@ extension UIPanGestureRecognizer {
 extension UIScreenEdgePanGestureRecognizer {
     override open var state: UIGestureRecognizerState {
         didSet {
-            if let action = actions.get(state) {
+            if let action = Store.get(self, state: state) {
                 action()
             }
         }
@@ -112,7 +101,7 @@ extension UIScreenEdgePanGestureRecognizer {
 extension UILongPressGestureRecognizer {
     override open var state: UIGestureRecognizerState {
         didSet {
-            if let action = actions.get(state) {
+            if let action = Store.get(self, state: state) {
                 action()
             }
         }

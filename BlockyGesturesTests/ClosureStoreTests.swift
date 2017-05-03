@@ -14,58 +14,85 @@ class ClosureStoreTests: QuickSpec {
     override func spec() {
         describe("ClosureStore") {
             it("can store and retrieve closures") {
+                let gesture = UIGestureRecognizer()
                 let state: UIGestureRecognizerState = .began
-                var store = ClosureStore<UIGestureRecognizerState>()
-                store.set(state, { })
-                let closure = store.get(state)
+                Store.set(gesture: gesture, state: state) {}
+
+                let closure = GestureRecognizerClosureStore.get(gesture, state: state)
                 expect(closure).notTo(beNil())
+
+                Store.empty()
             }
 
             it("can run retrieved closures") {
+                let gesture = UIGestureRecognizer()
                 let state: UIGestureRecognizerState = .began
-                var store = ClosureStore<UIGestureRecognizerState>()
 
                 var executed = false
-                store.set(state, {
+                GestureRecognizerClosureStore.set(gesture: gesture, state: state, {
                     executed = true
                 })
 
-                if let closure = store.get(state) {
+                if let closure = GestureRecognizerClosureStore.get(gesture, state: state) {
                     closure()
                 }
                 expect(executed).to(beTrue())
+
+                Store.empty()
             }
 
             it("can delete closures") {
+                let gesture = UIGestureRecognizer()
                 let state: UIGestureRecognizerState = .began
-                var store = ClosureStore<UIGestureRecognizerState>()
 
-                store.set(state, { })
-                store.remove(state)
+                Store.set(gesture: gesture, state: state, {})
+                Store.remove(gesture: gesture, state: state)
 
                 var removed = false
-                if store.get(state) == nil {
+                if Store.get(gesture, state: state) == nil {
                     removed = true
                 }
 
                 expect(removed).to(beTrue())
+
+                Store.empty()
+            }
+
+            it("does not remove other elements when one is removed") {
+                let firstGesture = UIGestureRecognizer()
+                let firstState: UIGestureRecognizerState = .began
+
+                let secondGesture = UIGestureRecognizer()
+                let secondState: UIGestureRecognizerState = .possible
+
+                Store.set(gesture: firstGesture, state: firstState, {} )
+                Store.set(gesture: secondGesture, state: secondState, {} )
+
+                Store.remove(gesture: firstGesture, state: firstState)
+
+                var correctlyRemoved = false
+                if Store.get(firstGesture, state: firstState) == nil && Store.get(secondGesture, state: secondState) != nil {
+                    correctlyRemoved = true
+                }
+                
+                expect(correctlyRemoved).to(beTrue())
             }
 
             it("to be able to empty all closures") {
+                let gesture = UIGestureRecognizer()
                 let firstState: UIGestureRecognizerState = .began
                 let secondState: UIGestureRecognizerState = .possible
-                var store = ClosureStore<UIGestureRecognizerState>()
 
-                store.set(firstState, { })
-                store.set(secondState, { })
+                Store.set(gesture: gesture, state: firstState, {} )
+                Store.set(gesture: gesture, state: secondState, {} )
 
-                store.empty()
+                Store.empty()
 
                 var removed = false
-                if store.get(firstState) == nil && store.get(secondState) == nil {
+                if Store.get(gesture, state: firstState) == nil && Store.get(gesture, state: secondState) == nil {
                     removed = true
                 }
-                
+
                 expect(removed).to(beTrue())
             }
         }

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F6590871EB91D8300E452C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6590861EB91D8300E452C3 /* AppDelegate.swift */; };
+		0F6590891EB91D8300E452C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6590881EB91D8300E452C3 /* ViewController.swift */; };
+		0F65908C1EB91D8300E452C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F65908A1EB91D8300E452C3 /* Main.storyboard */; };
+		0F65908E1EB91D8300E452C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F65908D1EB91D8300E452C3 /* Assets.xcassets */; };
+		0F6590911EB91D8300E452C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F65908F1EB91D8300E452C3 /* LaunchScreen.storyboard */; };
+		0F6590A41EB9231000E452C3 /* BlockyGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8D64EB1EB1466B00E44FB2 /* BlockyGestures.swift */; };
+		0F6590A51EB9231C00E452C3 /* GestureRecognizerClosureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8D64E91EB13A2C00E44FB2 /* GestureRecognizerClosureStore.swift */; };
 		0F7896031EB3CFD1004A383F /* BlockyGestures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F8D64761EB127F300E44FB2 /* BlockyGestures.framework */; };
 		0F7896371EB3D134004A383F /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F7896361EB3D134004A383F /* Nimble.framework */; };
 		0F7896391EB3D13E004A383F /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F7896381EB3D13E004A383F /* Quick.framework */; };
@@ -14,8 +21,9 @@
 		0F8D64851EB127F300E44FB2 /* BlockyGesturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8D64841EB127F300E44FB2 /* BlockyGesturesTests.swift */; };
 		0F8D64871EB127F300E44FB2 /* BlockyGestures.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F8D64791EB127F300E44FB2 /* BlockyGestures.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0F8D64E81EB13A0500E44FB2 /* ClosureStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8D64E71EB13A0500E44FB2 /* ClosureStoreTests.swift */; };
-		0F8D64EA1EB13A2C00E44FB2 /* ClosureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8D64E91EB13A2C00E44FB2 /* ClosureStore.swift */; };
+		0F8D64EA1EB13A2C00E44FB2 /* GestureRecognizerClosureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8D64E91EB13A2C00E44FB2 /* GestureRecognizerClosureStore.swift */; };
 		0F8D64EC1EB1466B00E44FB2 /* BlockyGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8D64EB1EB1466B00E44FB2 /* BlockyGestures.swift */; };
+		0F9662041EB508A0008D1CD8 /* PressAndHoldGestureRecognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9662031EB508A0008D1CD8 /* PressAndHoldGestureRecognizerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +37,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F6590841EB91D8300E452C3 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F6590861EB91D8300E452C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0F6590881EB91D8300E452C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0F65908B1EB91D8300E452C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0F65908D1EB91D8300E452C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0F6590901EB91D8300E452C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0F6590921EB91D8300E452C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F65909B1EB91D8400E452C3 /* DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUITests.swift; sourceTree = "<group>"; };
+		0F65909D1EB91D8400E452C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F7896321EB3D0F9004A383F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "Carthage/Checkouts/Nimble/build/Debug-iphoneos/Nimble.framework"; sourceTree = "<group>"; };
 		0F7896331EB3D0F9004A383F /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "Carthage/Checkouts/Quick/build/Debug-iphoneos/Quick.framework"; sourceTree = "<group>"; };
 		0F7896361EB3D134004A383F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "../../../Library/Developer/Xcode/DerivedData/BlockyGestures-gafjszxzbwwwnedvchjpoxwupwmg/Build/Products/Debug-iphonesimulator/Nimble.framework"; sourceTree = "<group>"; };
@@ -41,11 +58,19 @@
 		0F8D64841EB127F300E44FB2 /* BlockyGesturesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockyGesturesTests.swift; sourceTree = "<group>"; };
 		0F8D64861EB127F300E44FB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F8D64E71EB13A0500E44FB2 /* ClosureStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureStoreTests.swift; sourceTree = "<group>"; };
-		0F8D64E91EB13A2C00E44FB2 /* ClosureStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureStore.swift; sourceTree = "<group>"; };
-		0F8D64EB1EB1466B00E44FB2 /* BlockyGestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockyGestures.swift; sourceTree = "<group>"; };
+		0F8D64E91EB13A2C00E44FB2 /* GestureRecognizerClosureStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureRecognizerClosureStore.swift; sourceTree = "<group>"; };
+		0F8D64EB1EB1466B00E44FB2 /* BlockyGestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlockyGestures.swift; path = ../BlockyGestures/BlockyGestures.swift; sourceTree = "<group>"; };
+		0F9662031EB508A0008D1CD8 /* PressAndHoldGestureRecognizerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressAndHoldGestureRecognizerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0F6590811EB91D8300E452C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0F8D64721EB127F300E44FB2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -66,6 +91,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F6590851EB91D8300E452C3 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				0F8D64EB1EB1466B00E44FB2 /* BlockyGestures.swift */,
+				0F6590861EB91D8300E452C3 /* AppDelegate.swift */,
+				0F6590881EB91D8300E452C3 /* ViewController.swift */,
+				0F65908A1EB91D8300E452C3 /* Main.storyboard */,
+				0F65908D1EB91D8300E452C3 /* Assets.xcassets */,
+				0F65908F1EB91D8300E452C3 /* LaunchScreen.storyboard */,
+				0F6590921EB91D8300E452C3 /* Info.plist */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		0F65909A1EB91D8400E452C3 /* DemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0F65909B1EB91D8400E452C3 /* DemoUITests.swift */,
+				0F65909D1EB91D8400E452C3 /* Info.plist */,
+			);
+			path = DemoUITests;
+			sourceTree = "<group>";
+		};
 		0F7896311EB3D0F9004A383F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,8 +136,10 @@
 		0F8D646C1EB127F300E44FB2 = {
 			isa = PBXGroup;
 			children = (
+				0F6590851EB91D8300E452C3 /* Demo */,
 				0F8D64781EB127F300E44FB2 /* BlockyGestures */,
 				0F8D64831EB127F300E44FB2 /* BlockyGesturesTests */,
+				0F65909A1EB91D8400E452C3 /* DemoUITests */,
 				0F8D64771EB127F300E44FB2 /* Products */,
 				0F7896311EB3D0F9004A383F /* Frameworks */,
 			);
@@ -100,6 +150,7 @@
 			children = (
 				0F8D64761EB127F300E44FB2 /* BlockyGestures.framework */,
 				0F8D647F1EB127F300E44FB2 /* BlockyGesturesTests.xctest */,
+				0F6590841EB91D8300E452C3 /* Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,8 +160,7 @@
 			children = (
 				0F78963C1EB3F306004A383F /* Extras */,
 				0F8D64791EB127F300E44FB2 /* BlockyGestures.h */,
-				0F8D64EB1EB1466B00E44FB2 /* BlockyGestures.swift */,
-				0F8D64E91EB13A2C00E44FB2 /* ClosureStore.swift */,
+				0F8D64E91EB13A2C00E44FB2 /* GestureRecognizerClosureStore.swift */,
 				0F8D647A1EB127F300E44FB2 /* Info.plist */,
 			);
 			path = BlockyGestures;
@@ -119,11 +169,20 @@
 		0F8D64831EB127F300E44FB2 /* BlockyGesturesTests */ = {
 			isa = PBXGroup;
 			children = (
+				0F9662021EB5088A008D1CD8 /* Extras */,
 				0F8D64841EB127F300E44FB2 /* BlockyGesturesTests.swift */,
 				0F8D64E71EB13A0500E44FB2 /* ClosureStoreTests.swift */,
 				0F8D64861EB127F300E44FB2 /* Info.plist */,
 			);
 			path = BlockyGesturesTests;
+			sourceTree = "<group>";
+		};
+		0F9662021EB5088A008D1CD8 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				0F9662031EB508A0008D1CD8 /* PressAndHoldGestureRecognizerTests.swift */,
+			);
+			path = Extras;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +199,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0F6590831EB91D8300E452C3 /* Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F6590A21EB91D8400E452C3 /* Build configuration list for PBXNativeTarget "Demo" */;
+			buildPhases = (
+				0F6590801EB91D8300E452C3 /* Sources */,
+				0F6590811EB91D8300E452C3 /* Frameworks */,
+				0F6590821EB91D8300E452C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Demo;
+			productName = Demo;
+			productReference = 0F6590841EB91D8300E452C3 /* Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
 		0F8D64751EB127F300E44FB2 /* BlockyGestures */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F8D648A1EB127F300E44FB2 /* Build configuration list for PBXNativeTarget "BlockyGestures" */;
@@ -186,6 +262,11 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = iOSmith;
 				TargetAttributes = {
+					0F6590831EB91D8300E452C3 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 5PCSZP7AA2;
+						ProvisioningStyle = Automatic;
+					};
 					0F8D64751EB127F300E44FB2 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 5PCSZP7AA2;
@@ -205,6 +286,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 0F8D646C1EB127F300E44FB2;
 			productRefGroup = 0F8D64771EB127F300E44FB2 /* Products */;
@@ -212,12 +294,23 @@
 			projectRoot = "";
 			targets = (
 				0F8D64751EB127F300E44FB2 /* BlockyGestures */,
+				0F6590831EB91D8300E452C3 /* Demo */,
 				0F8D647E1EB127F300E44FB2 /* BlockyGesturesTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0F6590821EB91D8300E452C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F6590911EB91D8300E452C3 /* LaunchScreen.storyboard in Resources */,
+				0F65908E1EB91D8300E452C3 /* Assets.xcassets in Resources */,
+				0F65908C1EB91D8300E452C3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0F8D64741EB127F300E44FB2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -235,11 +328,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0F6590801EB91D8300E452C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F6590A41EB9231000E452C3 /* BlockyGestures.swift in Sources */,
+				0F6590891EB91D8300E452C3 /* ViewController.swift in Sources */,
+				0F6590871EB91D8300E452C3 /* AppDelegate.swift in Sources */,
+				0F6590A51EB9231C00E452C3 /* GestureRecognizerClosureStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0F8D64711EB127F300E44FB2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F8D64EA1EB13A2C00E44FB2 /* ClosureStore.swift in Sources */,
+				0F8D64EA1EB13A2C00E44FB2 /* GestureRecognizerClosureStore.swift in Sources */,
 				0F8D64EC1EB1466B00E44FB2 /* BlockyGestures.swift in Sources */,
 				0F78963E1EB3F306004A383F /* PressAndHoldGestureRecognizer.swift in Sources */,
 			);
@@ -251,6 +355,7 @@
 			files = (
 				0F8D64851EB127F300E44FB2 /* BlockyGesturesTests.swift in Sources */,
 				0F8D64E81EB13A0500E44FB2 /* ClosureStoreTests.swift in Sources */,
+				0F9662041EB508A0008D1CD8 /* PressAndHoldGestureRecognizerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +369,54 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		0F65908A1EB91D8300E452C3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0F65908B1EB91D8300E452C3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0F65908F1EB91D8300E452C3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0F6590901EB91D8300E452C3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		0F65909E1EB91D8400E452C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5PCSZP7AA2;
+				INFOPLIST_FILE = Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iosmith.Demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		0F65909F1EB91D8400E452C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5PCSZP7AA2;
+				INFOPLIST_FILE = Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iosmith.Demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		0F8D64881EB127F300E44FB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -378,6 +530,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = BlockyGestures/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iosmith.BlockyGestures;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -399,6 +552,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = BlockyGestures/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iosmith.BlockyGestures;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -448,6 +602,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0F6590A21EB91D8400E452C3 /* Build configuration list for PBXNativeTarget "Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F65909E1EB91D8400E452C3 /* Debug */,
+				0F65909F1EB91D8400E452C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0F8D64701EB127F300E44FB2 /* Build configuration list for PBXProject "BlockyGestures" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

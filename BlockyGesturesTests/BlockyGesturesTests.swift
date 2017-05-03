@@ -8,6 +8,7 @@
 
 import Quick
 import Nimble
+@testable import BlockyGestures
 
 class BlockyGesturesTests: QuickSpec {
     override func spec() {
@@ -60,7 +61,7 @@ class BlockyGesturesTests: QuickSpec {
                     executed = true
                 }
 
-                gesture.state = .began
+                gesture.state = .possible
                 expect(executed).to(beTrue())
             }
         }
@@ -73,7 +74,7 @@ class BlockyGesturesTests: QuickSpec {
                     executed = true
                 }
 
-                gesture.state = .began
+                gesture.state = .possible
                 expect(executed).to(beTrue())
             }
         }
@@ -86,7 +87,7 @@ class BlockyGesturesTests: QuickSpec {
                     executed = true
                 }
 
-                gesture.state = .began
+                gesture.state = .possible
                 expect(executed).to(beTrue())
             }
         }
@@ -99,7 +100,7 @@ class BlockyGesturesTests: QuickSpec {
                     executed = true
                 }
 
-                gesture.state = .began
+                gesture.state = .possible
                 expect(executed).to(beTrue())
             }
         }
@@ -112,7 +113,7 @@ class BlockyGesturesTests: QuickSpec {
                     executed = true
                 }
 
-                gesture.state = .began
+                gesture.state = .possible
                 expect(executed).to(beTrue())
             }
         }
@@ -125,7 +126,7 @@ class BlockyGesturesTests: QuickSpec {
                     executed = true
                 }
 
-                gesture.state = .began
+                gesture.state = .possible
                 expect(executed).to(beTrue())
             }
         }
@@ -138,7 +139,7 @@ class BlockyGesturesTests: QuickSpec {
                     executed = true
                 }
 
-                gesture.state = .began
+                gesture.state = .possible
                 expect(executed).to(beTrue())
             }
         }

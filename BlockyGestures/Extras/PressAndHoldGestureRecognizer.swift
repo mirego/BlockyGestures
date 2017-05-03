@@ -9,7 +9,7 @@
 import UIKit
 import UIKit.UIGestureRecognizerSubclass
 
-class PressAndHoldGestureRecognizer: UILongPressGestureRecognizer {
+open class PressAndHoldGestureRecognizer: UILongPressGestureRecognizer {
     var delay: TimeInterval
     private var timer: Timer?
 
@@ -18,9 +18,9 @@ class PressAndHoldGestureRecognizer: UILongPressGestureRecognizer {
         super.init(target: nil, action: nil)
     }
 
-    override var state: UIGestureRecognizerState {
+    override open var state: UIGestureRecognizerState {
         didSet {
-            if let action = actions.get(state) {
+            if let action = Store.get(self, state: state) {
                 if state == .began {
                     if #available(iOS 10.0, *) {
                         timer = Timer.scheduledTimer(withTimeInterval: delay, repeats: true, block: { _ in
@@ -36,14 +36,14 @@ class PressAndHoldGestureRecognizer: UILongPressGestureRecognizer {
         }
     }
 
-    override func reset() {
+    override open func reset() {
         timer?.invalidate()
         timer = nil
         super.reset()
     }
 
     @objc func performAction() {
-        if let action = self.actions.get(.began) {
+        if let action = Store.get(self, state: .began) {
             action()
         }
     }
