@@ -6,7 +6,8 @@
 //  Copyright © 2017 iOSmith. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import UIKit.UIGestureRecognizerSubclass
 
 fileprivate var storage = NSMapTable<UIGestureRecognizer, Wrapper<UIGestureRecognizerState>>.weakToStrongObjects()
 
@@ -18,7 +19,8 @@ public class GestureRecognizerClosureStore {
     /// - Parameter key: Key the closure was set to
     /// - Returns: Closure, if exists
     public static func get(_ gesture: UIGestureRecognizer, state: UIGestureRecognizerState) -> ( () -> Void )? {
-        return storage.object(forKey: gesture)?[state]
+        let wrapper = storage.object(forKey: gesture)
+        return wrapper?[state]
     }
 
 
@@ -58,7 +60,7 @@ public class GestureRecognizerClosureStore {
 }
 
 fileprivate class Wrapper<Key: Hashable>: AnyObject {
-    private var closures = [Key: () -> Void]()
+    fileprivate var closures = [Key: () -> Void]()
 
     subscript(index: Key) -> (() -> Void)? {
         get {

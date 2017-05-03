@@ -59,7 +59,7 @@
 		0F8D64861EB127F300E44FB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F8D64E71EB13A0500E44FB2 /* ClosureStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureStoreTests.swift; sourceTree = "<group>"; };
 		0F8D64E91EB13A2C00E44FB2 /* GestureRecognizerClosureStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureRecognizerClosureStore.swift; sourceTree = "<group>"; };
-		0F8D64EB1EB1466B00E44FB2 /* BlockyGestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlockyGestures.swift; path = ../BlockyGestures/BlockyGestures.swift; sourceTree = "<group>"; };
+		0F8D64EB1EB1466B00E44FB2 /* BlockyGestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockyGestures.swift; sourceTree = "<group>"; };
 		0F9662031EB508A0008D1CD8 /* PressAndHoldGestureRecognizerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressAndHoldGestureRecognizerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,7 +94,6 @@
 		0F6590851EB91D8300E452C3 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				0F8D64EB1EB1466B00E44FB2 /* BlockyGestures.swift */,
 				0F6590861EB91D8300E452C3 /* AppDelegate.swift */,
 				0F6590881EB91D8300E452C3 /* ViewController.swift */,
 				0F65908A1EB91D8300E452C3 /* Main.storyboard */,
@@ -160,6 +159,7 @@
 			children = (
 				0F78963C1EB3F306004A383F /* Extras */,
 				0F8D64791EB127F300E44FB2 /* BlockyGestures.h */,
+				0F8D64EB1EB1466B00E44FB2 /* BlockyGestures.swift */,
 				0F8D64E91EB13A2C00E44FB2 /* GestureRecognizerClosureStore.swift */,
 				0F8D647A1EB127F300E44FB2 /* Info.plist */,
 			);

@@ -139,7 +139,7 @@ class BlockyGesturesTests: QuickSpec {
                     executed = true
                 }
 
-                gesture.state = .possible
+                gesture.state = .possible   
                 expect(executed).to(beTrue())
             }
         }

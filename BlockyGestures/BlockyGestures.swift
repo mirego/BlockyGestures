@@ -6,26 +6,18 @@
 //  Copyright © 2017 iOSmith. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
 import UIKit.UIGestureRecognizerSubclass
 
 typealias Store = GestureRecognizerClosureStore
 
 public protocol Blocky: class {
-    func performing(_ action: @escaping () -> Void) -> Self
+    @discardableResult func performing(when state: UIGestureRecognizerState, _ action: @escaping () -> ()) -> Self
     
-    func performing(when state: UIGestureRecognizerState, _ action: @escaping () -> Void) -> Self
-    
-    func performing(when states: [UIGestureRecognizerState], _ action: @escaping () -> Void) -> Self
+    @discardableResult func performing(when states: [UIGestureRecognizerState], _ action: @escaping () -> ()) -> Self
 }
 
 extension UIGestureRecognizer: Blocky {
-    public func performing(_ action: @escaping () -> Void) -> Self {
-        return performing(when: .possible, action)
-    }
-
     public func performing(when state: UIGestureRecognizerState, _ action: @escaping () -> Void) -> Self {
         return performing(when: [state], action)
     }
@@ -34,76 +26,49 @@ extension UIGestureRecognizer: Blocky {
         for state in states {
             Store.set(gesture: self, state: state, action)
         }
+        addTarget(self, action: #selector(recognized))
         return self
+    }
+
+    @objc public func recognized(gesture: UIGestureRecognizer) {
+        Store.get(gesture, state: gesture.state)?()
     }
 }
 
+
+
 extension UITapGestureRecognizer {
-    override open var state: UIGestureRecognizerState {
-        didSet {
-            if let action = Store.get(self, state: state) {
-                action()
-            }
-        }
+    @discardableResult func performing(_ action: @escaping () -> Void) -> UITapGestureRecognizer {
+        return performing(when: .ended, action)
     }
 }
 
 extension UIPinchGestureRecognizer {
-    override open var state: UIGestureRecognizerState {
-        didSet {
-            if let action = Store.get(self, state: state) {
-                action()
-            }
-        }
+    @discardableResult func performing(_ action: @escaping () -> Void) -> UIPinchGestureRecognizer {
+        return performing(when: [.began, .changed, .ended], action)
     }
 }
 
 extension UIRotationGestureRecognizer {
-    override open var state: UIGestureRecognizerState {
-        didSet {
-            if let action = Store.get(self, state: state) {
-                action()
-            }
-        }
+    @discardableResult func performing(_ action: @escaping () -> Void) -> UIRotationGestureRecognizer {
+        return performing(when: [.began, .changed, .ended], action)
     }
 }
 
 extension UISwipeGestureRecognizer {
-    override open var state: UIGestureRecognizerState {
-        didSet {
-            if let action = Store.get(self, state: state) {
-                action()
-            }
-        }
+    @discardableResult func performing(_ action: @escaping () -> Void) -> UISwipeGestureRecognizer {
+        return performing(when: [.ended], action)
     }
 }
 
 extension UIPanGestureRecognizer {
-    override open var state: UIGestureRecognizerState {
-        didSet {
-            if let action = Store.get(self, state: state) {
-                action()
-            }
-        }
-    }
-}
-
-extension UIScreenEdgePanGestureRecognizer {
-    override open var state: UIGestureRecognizerState {
-        didSet {
-            if let action = Store.get(self, state: state) {
-                action()
-            }
-        }
+    @discardableResult func performing(_ action: @escaping () -> Void) -> UIPanGestureRecognizer {
+        return performing(when: [.began, .changed, .ended], action)
     }
 }
 
 extension UILongPressGestureRecognizer {
-    override open var state: UIGestureRecognizerState {
-        didSet {
-            if let action = Store.get(self, state: state) {
-                action()
-            }
-        }
+    @discardableResult func performing(_ action: @escaping () -> Void) -> UILongPressGestureRecognizer {
+        return performing(when: [.began, .changed, .ended], action)
     }
 }

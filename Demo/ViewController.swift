@@ -14,22 +14,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let tap = UITapGestureRecognizer(target: self, action: #selector(printThis))
-        let tapAgain = UITapGestureRecognizer()
+        let tapAgain = UIPanGestureRecognizer()
         tapAgain.performing {
-            print("Hi again...")
+            print("\(tapAgain.state.rawValue): Hi")
         }
-
-//        tap.performing {
-//            print("Hi")
-//        }
-
-        view.addGestureRecognizer(tap)
         view.addGestureRecognizer(tapAgain)
     }
 
-    @objc func printThis() {
-        print("Hi")
+    @objc func printThis(sender: UIGestureRecognizer) {
+        print("\(sender.state.rawValue): Hi")
     }
 
     func updateText(fromGesture gesture: UIGestureRecognizer) {
