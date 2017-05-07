@@ -12,12 +12,18 @@ import UIKit.UIGestureRecognizerSubclass
 typealias Store = GestureRecognizerClosureStore
 
 public protocol Blocky: class {
+    @discardableResult func performing( _ action: @escaping () -> ()) -> Self
+
     @discardableResult func performing(when state: UIGestureRecognizerState, _ action: @escaping () -> ()) -> Self
     
     @discardableResult func performing(when states: [UIGestureRecognizerState], _ action: @escaping () -> ()) -> Self
 }
 
 extension UIGestureRecognizer: Blocky {
+    public func performing(_ action: @escaping () -> ()) -> Self {
+        return performing(when: .began, action)
+    }
+
     public func performing(when state: UIGestureRecognizerState, _ action: @escaping () -> Void) -> Self {
         return performing(when: [state], action)
     }
@@ -38,37 +44,37 @@ extension UIGestureRecognizer: Blocky {
 
 
 extension UITapGestureRecognizer {
-    @discardableResult func performing(_ action: @escaping () -> Void) -> UITapGestureRecognizer {
+    @discardableResult override public func performing(_ action: @escaping () -> Void) -> UITapGestureRecognizer {
         return performing(when: .ended, action)
     }
 }
 
 extension UIPinchGestureRecognizer {
-    @discardableResult func performing(_ action: @escaping () -> Void) -> UIPinchGestureRecognizer {
+    @discardableResult override public func performing(_ action: @escaping () -> Void) -> UIPinchGestureRecognizer {
         return performing(when: [.began, .changed, .ended], action)
     }
 }
 
 extension UIRotationGestureRecognizer {
-    @discardableResult func performing(_ action: @escaping () -> Void) -> UIRotationGestureRecognizer {
+    @discardableResult override public func performing(_ action: @escaping () -> Void) -> UIRotationGestureRecognizer {
         return performing(when: [.began, .changed, .ended], action)
     }
 }
 
 extension UISwipeGestureRecognizer {
-    @discardableResult func performing(_ action: @escaping () -> Void) -> UISwipeGestureRecognizer {
+    @discardableResult override public func performing(_ action: @escaping () -> Void) -> UISwipeGestureRecognizer {
         return performing(when: [.ended], action)
     }
 }
 
 extension UIPanGestureRecognizer {
-    @discardableResult func performing(_ action: @escaping () -> Void) -> UIPanGestureRecognizer {
+    @discardableResult override public func performing(_ action: @escaping () -> Void) -> UIPanGestureRecognizer {
         return performing(when: [.began, .changed, .ended], action)
     }
 }
 
 extension UILongPressGestureRecognizer {
-    @discardableResult func performing(_ action: @escaping () -> Void) -> UILongPressGestureRecognizer {
+    @discardableResult override public func performing(_ action: @escaping () -> Void) -> UILongPressGestureRecognizer {
         return performing(when: [.began, .changed, .ended], action)
     }
 }
