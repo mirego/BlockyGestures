@@ -2,16 +2,16 @@ BlockyGestures is a small framework written in Swift that allows you to create g
 
 - [Features](#features)
 - [Requirements](#requirements)
-- [Communication](#communication)
-- [Installation](#installation)
 - [Usage](#usage)
+- [Installation](#installation)
+- [Communication](#communication)
 - [Credits](#credits)
 - [License](#license)
 
 ## Features
 
-- [] Cocoapods support
-- [] Carthage support
+- [x] Cocoapods support
+- [x] Carthage support
 
 ## Requirements
 
@@ -19,11 +19,11 @@ BlockyGestures is a small framework written in Swift that allows you to create g
 - Xcode 8.1+
 - Swift 3.0+
 
-## Communication
+## Usage
 
-- If you **found a bug**, open an issue.
-- If you **have a feature request**, open an issue.
-- If you **want to contribute**, submit a pull request.
+```swift
+import BlockyGestures
+```
 
 ## Installation
 
@@ -74,17 +74,13 @@ github "lordzsolt/BlockyGestures" ~> 1.0
 
 Run `carthage update` to build the framework and drag the built `BlockyGestures.framework` into your Xcode project.
 
-## Usage
+## Communication
 
-### Making a Request
-
-```swift
-import BlockyGestures
-```
+- If you **found a bug**, open an issue.
+- If you **have a feature request**, open an issue.
+- If you **want to contribute**, submit a pull request.
 
 ## Credits
-
-Alamofire is owned and maintained by the [Alamofire Software Foundation](http://alamofire.org). You can follow them on Twitter at [@AlamofireSF](https://twitter.com/AlamofireSF) for project updates and releases.
 
 ## License
 
