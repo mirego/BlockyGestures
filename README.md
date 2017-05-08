@@ -5,7 +5,6 @@ BlockyGestures is a small framework written in Swift that allows you to create g
 - [Usage](#usage)
 - [Installation](#installation)
 - [Communication](#communication)
-- [Credits](#credits)
 - [License](#license)
 
 ## Features
@@ -115,8 +114,6 @@ Run `carthage update` to build the framework and drag the built `BlockyGestures.
 - If you **found a bug**, open an issue.
 - If you **have a feature request**, open an issue.
 - If you **want to contribute**, submit a pull request.
-
-## Credits
 
 ## License
 

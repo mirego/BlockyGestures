@@ -8,6 +8,6 @@ Pod::Spec.new do |spec|
 
   spec.platform = :ios, "8.0"
   spec.requires_arc = true
-  spec.source = { git: "https://github.com/lordzsolt/BlockyGestures.git", tag: "v#{spec.version}", submodules: true }
-  spec.source_files = "BlockyGestures/**/*.{h,swift}"
+  spec.source = { :git => 'https://github.com/lordzsolt/BlockyGestures.git', :tag => spec.version }
+  spec.source_files = 'BlockyGestures/**/*.{h,swift}'
 end
