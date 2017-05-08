@@ -48,6 +48,8 @@ gesture.performing(when: [.began, .changed]) {
 }
 ```
 
+**NOTE**: Currently you can only add a single closure for each gesture recognizer state.
+
 ### Capturing gesture recognizer in closure
 
 Currently the closure is of type `() -> Void`, so you will not recieve a reference to the gesture. To capture the gesute within the closure, you have to split your code like so:
