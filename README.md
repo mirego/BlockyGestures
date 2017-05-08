@@ -21,8 +21,42 @@ BlockyGestures is a small framework written in Swift that allows you to create g
 
 ## Usage
 
+### Simple use case
+
 ```swift
 import BlockyGestures
+
+let gesture = UITapGestureRecognizer().perfoming {
+    // The code you would regularly put in the action selector
+}
+```
+
+### Specialized use case
+
+You can perform different actions in each gesture recognizer state
+
+```swift
+import BlockyGestures
+
+let gesture = UIPanGestureRecognizer()
+gesture.performing(when: .ended) { 
+    // Your code here
+}
+
+gesture.performing(when: [.began, .changed]) { 
+    // Your other code here
+}
+```
+
+### Capturing gesture recognizer in closure
+
+Currently the closure is of type `() -> Void`, so you will not recieve a reference to the gesture. To capture the gesute within the closure, you have to split your code like so:
+
+```swift
+let gesture = UISwipeGesture()
+gesture.performing {
+    // Your code here
+}
 ```
 
 ## Installation
