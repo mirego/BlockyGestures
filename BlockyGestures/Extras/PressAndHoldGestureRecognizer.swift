@@ -18,7 +18,7 @@ open class PressAndHoldGestureRecognizer: UILongPressGestureRecognizer {
         super.init(target: nil, action: nil)
     }
 
-    override open var state: UIGestureRecognizerState {
+    override open var state: UIGestureRecognizer.State {
         didSet {
             if let action = Store.get(self, state: state) {
                 if state == .began {

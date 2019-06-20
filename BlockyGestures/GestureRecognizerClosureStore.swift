@@ -9,7 +9,7 @@
 import UIKit
 import UIKit.UIGestureRecognizerSubclass
 
-fileprivate var storage = NSMapTable<UIGestureRecognizer, Wrapper<UIGestureRecognizerState>>.weakToStrongObjects()
+fileprivate var storage = NSMapTable<UIGestureRecognizer, Wrapper<UIGestureRecognizer.State>>.weakToStrongObjects()
 
 /// ClosureStore is a simple module for storing closures based on a Hashable Key. It essentially is a wrapper around a Dictionary, allowing for easier replacement
 public class GestureRecognizerClosureStore {
@@ -18,7 +18,7 @@ public class GestureRecognizerClosureStore {
     ///
     /// - Parameter key: Key the closure was set to
     /// - Returns: Closure, if exists
-    public static func get(_ gesture: UIGestureRecognizer, state: UIGestureRecognizerState) -> ( () -> Void )? {
+    public static func get(_ gesture: UIGestureRecognizer, state: UIGestureRecognizer.State) -> ( () -> Void )? {
         let wrapper = storage.object(forKey: gesture)
         return wrapper?[state]
     }
@@ -29,11 +29,11 @@ public class GestureRecognizerClosureStore {
     /// - Parameters:
     ///   - key: Key you want to set the closure to
     ///   - action: The closure you want to store
-    public static func set(gesture: UIGestureRecognizer, state: UIGestureRecognizerState, _ action: @escaping () -> Void) {
+    public static func set(gesture: UIGestureRecognizer, state: UIGestureRecognizer.State, _ action: @escaping () -> Void) {
         if let wrapper = storage.object(forKey: gesture) {
             wrapper[state] = action
         } else {
-            let wrapper = Wrapper<UIGestureRecognizerState>()
+            let wrapper = Wrapper<UIGestureRecognizer.State>()
             wrapper[state] = action
             storage.setObject(wrapper, forKey: gesture)
         }
@@ -42,7 +42,7 @@ public class GestureRecognizerClosureStore {
     /// Remove a stored closure based on a key
     ///
     /// - Parameter key: Key the closure was set to
-    public static func remove(gesture: UIGestureRecognizer, state: UIGestureRecognizerState) {
+    public static func remove(gesture: UIGestureRecognizer, state: UIGestureRecognizer.State) {
         guard let wrapper = storage.object(forKey: gesture) else {
             return
         }
@@ -59,7 +59,7 @@ public class GestureRecognizerClosureStore {
     }
 }
 
-fileprivate class Wrapper<Key: Hashable>: AnyObject {
+fileprivate class Wrapper<Key: Hashable>: Any {
     fileprivate var closures = [Key: () -> Void]()
 
     subscript(index: Key) -> (() -> Void)? {
